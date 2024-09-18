@@ -50,6 +50,59 @@ Fungsi knapsack(W, wt, val, n)
     -   **Tidak memasukkan item:** Jika bobot item ke-i lebih besar dari kapasitas yang tersisa, maka kita hanya mempertimbangkan nilai maksimum yang diperoleh dari submasalah sebelumnya.
 4.  **Nilai Optimal:** Nilai maksimum yang dapat dicapai dengan menggunakan semua item dan kapasitas knapsack W disimpan dalam `K[n][W]`.
 
+**Contoh Masalah Knapsack:**
+
+Andai kita memiliki sebuah tas ransel dengan kapasitas maksimal 10 kg. Kita memiliki beberapa barang dengan berat dan nilai masing-masing, seperti yang tertera pada tabel berikut:
+
+|Barang|Berat (kg)|Nilai|
+|--|--|--|
+|A|2|10|
+|B|3|15|
+|C|5|20|
+
+Langkah penyelesaian termudah adalah dengan memvisualisasikan menggunakan tabel knapsack
+
+**Tujuan:** Pilihlah kombinasi barang yang dapat dimasukkan ke dalam tas ransel sehingga total nilai barang yang dibawa maksimal, tanpa melebihi kapasitas tas ransel.
+
+**Penyelesaian dengan Algoritma Dynamic Programming:**
+
+**Langkah-langkah:**
+
+1.  **Buat Tabel:**
+    
+    -   Buat tabel 2D dengan ukuran (jumlah barang + 1) x (kapasitas tas + 1).
+    -   Baris mewakili barang (0 hingga jumlah barang), kolom mewakili kapasitas tas (0 hingga kapasitas maksimal).
+    -   Setiap sel dalam tabel akan menyimpan nilai maksimum yang dapat dicapai dengan menggunakan barang-barang hingga baris tersebut dan kapasitas tas hingga kolom tersebut.
+2.  **Inisialisasi Tabel:**
+    
+    -   Isi baris pertama dan kolom pertama dengan 0. Ini karena jika tidak ada barang atau tidak ada kapasitas, maka nilai maksimumnya adalah 0.
+3.  **Isi Tabel:**
+    
+    -   Mulai dari baris kedua dan kolom kedua, isi setiap sel dengan nilai maksimum yang dapat dicapai.
+    -   Untuk setiap sel (i, w), kita memiliki dua pilihan:
+        -   **Tidak mengambil barang i:** Nilai sel ini sama dengan nilai sel di atasnya (i-1, w).
+        -   **Mengambil barang i:** Jika berat barang i kurang dari atau sama dengan kapasitas yang tersisa (w), maka nilai sel ini adalah maksimum antara nilai sel di atasnya (i-1, w) dan nilai barang i ditambah nilai sel di kiri atas (i-1, w-berat barang i).
+4.  **Nilai Optimal:**
+    
+    -   Nilai pada sel kanan bawah tabel (jumlah barang, kapasitas tas) adalah nilai maksimum yang dapat dicapai.
+
+**Visualisasi Tabel:**
+
+Misalkan kita memiliki tabel seperti berikut:
+||0|1|2|3|4|5|6|7|8|9|10|
+|--|--|--|--|--|--|--|--|--|--|--|--|
+|0|0|0|0|0|0|0|0|0|0|0|0|
+|A|0|0|10|10|10|10|10|10|10|10|10|
+|B|0|0|10|15|15|25|25|25|25|25|25|
+|C|0|0|10|15|20|25|35|35|40|40|40|
+
+**Penjelasan:**
+
+-   **Baris 0, kolom 0-10:** Jika tidak ada barang, maka nilai maksimumnya selalu 0.
+-   **Baris A, kolom 2:** Jika hanya ada barang A dan kapasitas 2, kita bisa mengambil barang A sehingga nilai maksimumnya 10.
+-   **Baris B, kolom 5:** Jika ada barang A dan B, dan kapasitas 5, kita bisa mengambil barang A dan B, sehingga nilai maksimumnya 25 (10+15).
+-   **Baris C, kolom 10:** Nilai maksimum yang dapat dicapai adalah 40, artinya dengan kapasitas 10 kg, kita bisa mendapatkan nilai maksimal 40 dengan mengambil kombinasi barang tertentu.
+
 ### Kesimpulan
 
 Algoritma knapsack dengan dynamic programming menawarkan solusi efisien untuk masalah optimasi pemilihan item. Dengan menggunakan konsep himpunan bagian, kita dapat memformulasikan masalah ini secara matematis dan menerapkan teknik dynamic programming untuk menemukan solusi optimal. Pendekatan ini sangat berguna dalam berbagai aplikasi, seperti perencanaan produksi, manajemen inventori, dan pemilihan portofolio investasi.
