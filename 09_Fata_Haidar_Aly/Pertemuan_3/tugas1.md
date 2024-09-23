@@ -1,7 +1,8 @@
-# Contoh Algoritma Diffie-Hellman
+# Algoritma Diffie-Hellman
 
-## Deskripsi
-Algoritma Diffie-Hellman adalah metode untuk bertukar kunci kriptografis secara aman melalui saluran publik. Dalam contoh ini, kita akan menunjukkan langkah-langkah untuk menghasilkan kunci rahasia bersama antara dua pihak, Alice dan Bob.
+Algoritma Diffie-Hellman adalah metode untuk bertukar kunci kriptografis secara aman melalui saluran publik. Dalam contoh ini, kita akan menunjukkan langkah-langkah untuk menghasilkan kunci rahasia bersama antara dua pihak, Fata dan Rivan.
+
+1. 
 
 ## Kode Pemrograman
 
