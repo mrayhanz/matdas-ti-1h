@@ -1,3 +1,39 @@
+def algoritma_diffie_hellman():
+    teks = """
+    Algoritma Diffie-Hellman untuk Pertukaran Kunci:
+
+    1. Inisialisasi Parameter:
+       - Alice dan Bob sepakat pada bilangan prima p = 97 dan basis g = 5.
+
+    2. Pemilihan Kunci Pribadi:
+       - Alice memilih kunci pribadi x = 36.
+       - Bob memilih kunci pribadi y = 58.
+
+    3. Menghitung Kunci Publik:
+       - Alice menghitung kunci publik X:
+         X = g^x mod p = 5^36 mod 97 = 50
+       - Bob menghitung kunci publik Y:
+         Y = g^y mod p = 5^58 mod 97 = 44
+
+    4. Pertukaran Kunci Publik:
+       - Alice mengirimkan kunci publik X ke Bob.
+       - Bob mengirimkan kunci publik Y ke Alice.
+
+    5. Menghitung Kunci Rahasia Bersama:
+       - Alice menghitung kunci rahasia K:
+         K = Y^x mod p = 44^36 mod 97 = 16
+       - Bob menghitung kunci rahasia K:
+         K = X^y mod p = 50^58 mod 97 = 16
+
+    6. Kunci Rahasia Bersama:
+       - Kunci rahasia bersama yang dihasilkan oleh Alice dan Bob adalah K = 16.
+       - Kunci ini dapat digunakan untuk enkripsi dan dekripsi pesan antara mereka.
+    """
+    print(teks)
+
+# Menjalankan fungsi
+if __name__ == "__main__":
+    algoritma_diffie_hellman()
 # Algoritma Diffie-Hellman
 
 def power_mod(base, exponent, modulus):
