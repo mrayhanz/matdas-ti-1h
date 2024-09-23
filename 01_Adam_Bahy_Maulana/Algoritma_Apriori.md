@@ -6,15 +6,13 @@ Algoritma **Apriori** adalah salah satu algoritma yang digunakan untuk **associa
 ## Konsep Utama Algoritma Apriori:
 
 1. **Frequent Itemset**: Itemset (himpunan item) yang muncul lebih sering dari nilai minimum threshold yang disebut **support**. Support dari itemset \( X \) dihitung sebagai:
-   \[
-   Support(X) = \frac{\text{jumlah transaksi yang mengandung } X}{\text{total jumlah transaksi}}
-   \]
+   
+   ![Support Formula](https://latex.codecogs.com/png.latex?Support(X)%20%3D%20%5Cfrac%7Bjumlah%20transaksi%20yang%20mengandung%20X%7D%7Btotal%20jumlah%20transaksi%7D)
    
 2. **Association Rule**: Setelah menemukan itemset yang sering muncul (frequent itemsets), aturan asosiasi dibangun dalam bentuk \( A \rightarrow B \), yang berarti jika item \( A \) dibeli, maka item \( B \) juga kemungkinan besar akan dibeli. Nilai **confidence** dihitung sebagai:
-   \[
-   Confidence(A \rightarrow B) = \frac{Support(A \cup B)}{Support(A)}
-   \]
-   
+
+   ![Confidence Formula](https://latex.codecogs.com/png.latex?Confidence(A%20%5Crightarrow%20B)%20%3D%20%5Cfrac%7BSupport(A%20%5Ccup%20B)%7D%7BSupport(A)%7D)
+
 3. **Prinsip Apriori**: Jika suatu itemset dianggap tidak sering muncul, maka semua supersets-nya juga tidak akan sering muncul. Algoritma ini bekerja dengan memanfaatkan properti tersebut untuk mengurangi pencarian kombinasi itemset yang tidak perlu.
 
 ## Langkah-langkah Algoritma Apriori:
