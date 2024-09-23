@@ -43,7 +43,6 @@ public class Tester {
         // Set C akan menampung elemen "Z"
         System.out.println(C);
     }
-
 }
 
 **Penjelasan:**
