@@ -13,26 +13,26 @@ Algoritma Divide and Conquer melibatkan pemecahan masalah yang lebih besar menja
 Algoritma Membagi dan Menaklukkan dapat dibagi menjadi tiga langkah: **Membagi** , **Menaklukkan** dan **Menggabungkan** .
 
 1. **Membagi** :
--Memecah masalah asli menjadi submasalah yang lebih kecil.
--Setiap submasalah mesti mewakili bagian dari masalah keseluruhan.
--Tujuannya adalah membagi masalah hingga tidak ada lagi pembagian yang mungkin.
+Memecah masalah asli menjadi submasalah yang lebih kecil.
+Setiap submasalah mesti mewakili bagian dari masalah keseluruhan.
+Tujuannya adalah membagi masalah hingga tidak ada lagi pembagian yang mungkin.
 2. **Menaklukkan** :
--Selesaikan setiap submasalah yang lebih kecil satu per satu.
--Jika submasalah cukup kecil (sering disebut sebagai kasus dasar), kami menyelesaikannya secara langsung tanpa rekurensi lebih lanjut.
--Tujuannya adalah untuk menemukan solusi untuk submasalah ini secara mandiri.
+Selesaikan setiap submasalah yang lebih kecil satu per satu.
+Jika submasalah cukup kecil (sering disebut sebagai kasus dasar), kami menyelesaikannya secara langsung tanpa rekurensi lebih lanjut.
+Tujuannya adalah untuk menemukan solusi untuk submasalah ini secara mandiri.
 3. **Gabungkan** :
--Gabungkan sub-masalah untuk mendapatkan solusi akhir dari keseluruhan masalah.
--Setelah submasalah yang lebih kecil terpecahkan, kami menggabungkan solusinya secara rekursif untuk mendapatkan solusi masalah yang lebih besar.
--Tujuannya adalah merumuskan solusi untuk masalah asli dengan menggabungkan hasil dari submasalah.
+Gabungkan sub-masalah untuk mendapatkan solusi akhir dari keseluruhan masalah.
+Setelah submasalah yang lebih kecil terpecahkan, kami menggabungkan solusinya secara rekursif untuk mendapatkan solusi masalah yang lebih besar.
+Tujuannya adalah merumuskan solusi untuk masalah asli dengan menggabungkan hasil dari submasalah.
 
 ### Karakteristik Algoritma Divide and Conquer 
 
 Algoritma Divide and Conquer melibatkan pemecahan masalah menjadi bagian-bagian yang lebih kecil dan lebih mudah dikelola, menyelesaikan setiap bagian secara individual, dan kemudian menggabungkan solusi untuk menyelesaikan masalah awal. Karakteristik Algoritma Divide and Conquer adalah:
 
--**Membagi Masalah** : Langkah pertama adalah memecah masalah menjadi submasalah yang lebih kecil dan lebih mudah dikelola. Pembagian ini dapat dilakukan secara rekursif hingga submasalah menjadi cukup sederhana untuk dipecahkan secara langsung.
--**Kemandirian Submasalah** : Setiap submasalah harus mandiri dari yang lain, artinya penyelesaian satu submasalah tidak bergantung pada penyelesaian submasalah yang lain. Hal ini memungkinkan pemrosesan paralel atau eksekusi submasalah secara bersamaan, yang dapat menghasilkan peningkatan efisiensi.
--**Menaklukkan Setiap Submasalah** : Setelah dibagi, submasalah dipecahkan secara individual. Ini dapat melibatkan penerapan pendekatan bagi dan taklukkan yang sama secara rekursif hingga submasalah menjadi cukup sederhana untuk dipecahkan secara langsung, atau dapat melibatkan penerapan algoritma atau teknik yang berbeda.
--**Menggabungkan Solusi** : Setelah menyelesaikan submasalah, solusinya digabungkan untuk mendapatkan solusi dari masalah awal. Langkah penggabungan ini harus relatif efisien dan mudah, karena solusi untuk submasalah harus dirancang agar dapat disatukan dengan sempurna.
+**Membagi Masalah** : Langkah pertama adalah memecah masalah menjadi submasalah yang lebih kecil dan lebih mudah dikelola. Pembagian ini dapat dilakukan secara rekursif hingga submasalah menjadi cukup sederhana untuk dipecahkan secara langsung.
+**Kemandirian Submasalah** : Setiap submasalah harus mandiri dari yang lain, artinya penyelesaian satu submasalah tidak bergantung pada penyelesaian submasalah yang lain. Hal ini memungkinkan pemrosesan paralel atau eksekusi submasalah secara bersamaan, yang dapat menghasilkan peningkatan efisiensi.
+**Menaklukkan Setiap Submasalah** : Setelah dibagi, submasalah dipecahkan secara individual. Ini dapat melibatkan penerapan pendekatan bagi dan taklukkan yang sama secara rekursif hingga submasalah menjadi cukup sederhana untuk dipecahkan secara langsung, atau dapat melibatkan penerapan algoritma atau teknik yang berbeda.
+**Menggabungkan Solusi** : Setelah menyelesaikan submasalah, solusinya digabungkan untuk mendapatkan solusi dari masalah awal. Langkah penggabungan ini harus relatif efisien dan mudah, karena solusi untuk submasalah harus dirancang agar dapat disatukan dengan sempurna.
 
 ### Pseudocode divide and conquer
 ```
@@ -74,15 +74,15 @@ FUNCTION Merge(left, right)
 
 1.MergeSort:
 
--Fungsi ini memeriksa apakah panjang array kurang dari atau sama dengan 1; jika ya, array sudah terurut.
--Kemudian, array dibagi menjadi dua bagian: kiri dan kanan.
--Fungsi ini dipanggil secara rekursif pada kedua bagian.
+Fungsi ini memeriksa apakah panjang array kurang dari atau sama dengan 1; jika ya, array sudah terurut.
+Kemudian, array dibagi menjadi dua bagian: kiri dan kanan.
+Fungsi ini dipanggil secara rekursif pada kedua bagian.
 
 2.Merge:
 
--Fungsi ini menggabungkan dua array yang sudah terurut (kiri dan kanan) menjadi satu array terurut.
--Menggunakan dua indeks (i dan j) untuk melacak posisi saat ini di kedua array.
--Elemen yang lebih kecil ditambahkan ke array hasil, hingga semua elemen tergabung.
+Fungsi ini menggabungkan dua array yang sudah terurut (kiri dan kanan) menjadi satu array terurut.
+Menggunakan dua indeks (i dan j) untuk melacak posisi saat ini di kedua array.
+Elemen yang lebih kecil ditambahkan ke array hasil, hingga semua elemen tergabung.
 
 ### Contoh Penggunaan
 ```
