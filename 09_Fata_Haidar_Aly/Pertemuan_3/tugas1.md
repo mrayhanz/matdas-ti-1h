@@ -1,3 +1,4 @@
+
 # Algoritma Diffie-Hellman
 
 def power_mod(base, exponent, modulus):
