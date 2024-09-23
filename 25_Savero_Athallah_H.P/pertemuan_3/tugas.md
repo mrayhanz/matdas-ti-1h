@@ -85,18 +85,16 @@ if find(0) != find(3):
 Inisialisasi:
 
 parent: Menyimpan "orang tua" dari setiap elemen. Pada awalnya, setiap elemen menunjuk pada dirinya sendiri.
-rank: Digunakan untuk menyimpan tinggi pohon untuk optimasi "union by rank".
-Find:
+rank: Digunakan untuk menyimpan tinggi pohon untuk optimasi "union by rank"
 
-Fungsi ini mencari akar dari elemen x. Jika parent[x] bukan x, maka elemen x mengikuti akar dari orang tuanya, hingga menemukan akar sebenarnya.
+Find: Fungsi ini mencari akar dari elemen x. Jika parent[x] bukan x, maka elemen x mengikuti akar dari orang tuanya, hingga menemukan akar sebenarnya.
 Path compression diterapkan untuk mempercepat pencarian berikutnya dengan langsung menunjuk ke akar.
-Union:
 
-Fungsi ini menggabungkan dua himpunan berdasarkan akarnya.
+Union:Fungsi ini menggabungkan dua himpunan berdasarkan akarnya.
 Union by rank diterapkan untuk menjaga pohon tetap pendek dengan selalu menggabungkan pohon yang lebih kecil ke pohon yang lebih besar.
 Contoh Kasus Penggunaan
-Algoritma Union-Find banyak digunakan dalam:
 
+Algoritma Union-Find banyak digunakan dalam:
 Pencarian komponen terhubung dalam graf.
 MST (Minimum Spanning Tree), seperti algoritma Kruskal.
 Problema dynamic connectivity, misalnya untuk menentukan apakah ada jalur antara dua titik pada graf yang berubah-ubah.
