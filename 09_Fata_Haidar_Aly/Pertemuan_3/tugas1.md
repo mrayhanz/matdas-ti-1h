@@ -17,8 +17,8 @@ def diffie_hellman():
     g = 5   # Basis
 
     # Pemilihan kunci pribadi
-    x = 36  # Kunci pribadi Alice
-    y = 58  # Kunci pribadi Bob
+    x = 36  # Kunci pribadi Fata 
+    y = 58  # Kunci pribadi Rivan
 
     # Menghitung kunci publik
     X = power_mod(g, x, p)  # Kunci publik Fata
