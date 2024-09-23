@@ -16,6 +16,7 @@ Input: Himpunan A, Himpunan B;
 
 **Implementasi dalam Java:**
 
+```
 import java.util.HashSet;
 
 public class Tester {
@@ -44,6 +45,7 @@ public class Tester {
         System.out.println(C);
     }
 }
+```
 
 **Penjelasan:**
 
