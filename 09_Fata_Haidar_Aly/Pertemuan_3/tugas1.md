@@ -17,22 +17,22 @@ def diffie_hellman():
     g = 5   # Basis
 
     # Pemilihan kunci pribadi
-    x = 36  # Kunci pribadi Alice
-    y = 58  # Kunci pribadi Bob
+    x = 36  # Kunci pribadi Fata 
+    y = 58  # Kunci pribadi Rivan
 
     # Menghitung kunci publik
-    X = power_mod(g, x, p)  # Kunci publik Alice
-    Y = power_mod(g, y, p)  # Kunci publik Bob
+    X = power_mod(g, x, p)  # Kunci publik Fata
+    Y = power_mod(g, y, p)  # Kunci publik Rivan
 
-    print(f"Kunci Publik Alice (X): {X}")
-    print(f"Kunci Publik Bob (Y): {Y}")
+    print(f"Kunci Publik Fata (X): {X}")
+    print(f"Kunci Publik Rivan (Y): {Y}")
 
     # Menghitung kunci rahasia bersama
-    K_Alice = power_mod(Y, x, p)  # Kunci rahasia Alice
-    K_Bob = power_mod(X, y, p)     # Kunci rahasia Bob
+    K_Alice = power_mod(Y, x, p)  # Kunci rahasia Fata
+    K_Bob = power_mod(X, y, p)     # Kunci rahasia Rivan
 
-    print(f"Kunci Rahasia Bersama Alice (K): {K_Alice}")
-    print(f"Kunci Rahasia Bersama Bob (K): {K_Bob}")
+    print(f"Kunci Rahasia Bersama Fata (K): {K_Alice}")
+    print(f"Kunci Rahasia Bersama Rivan (K): {K_Bob}")
 
 # Menjalankan fungsi
 if __name__ == "__main__":
