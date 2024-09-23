@@ -1,39 +1,41 @@
-# Algoritma Diffie-Hellman
+import java.math.BigInteger;
+import java.security.SecureRandom;
 
-def power_mod(base, exponent, modulus):
-    """Fungsi untuk menghitung (base^exponent) mod modulus dengan metode eksponensial cepat."""
-    result = 1
-    base = base % modulus
-    while exponent > 0:
-        if (exponent % 2) == 1:  # Jika exponent ganjil
-            result = (result * base) % modulus
-        exponent = exponent >> 1  # Membagi exponent dengan 2
-        base = (base * base) % modulus
-    return result
+public class DiffieHellman {
+    private BigInteger p; // bilangan prima
+    private BigInteger g; // generator
+    private BigInteger privateKeyA; // kunci pribadi Alice
+    private BigInteger privateKeyB; // kunci pribadi Bob
+    private BigInteger publicKeyA; // kunci publik Alice
+    private BigInteger publicKeyB; // kunci publik Bob
+    private BigInteger sharedSecretA; // kunci rahasia Alice
+    private BigInteger sharedSecretB; // kunci rahasia Bob
 
-def diffie_hellman():
-    # Inisialisasi parameter
-    p = 97  # Bilangan prima
-    g = 5   # Basis
+    public DiffieHellman(int bitLength) {
+        SecureRandom random = new SecureRandom();
+        p = BigInteger.probablePrime(bitLength, random); // menghasilkan bilangan prima
+        g = new BigInteger("2"); // memilih generator
+        privateKeyA = new BigInteger(bitLength, random); // kunci pribadi Alice
+        privateKeyB = new BigInteger(bitLength, random); // kunci pribadi Bob
+        publicKeyA = g.modPow(privateKeyA, p); // kunci publik Alice
+        publicKeyB = g.modPow(privateKeyB, p); // kunci publik Bob
+        sharedSecretA = publicKeyB.modPow(privateKeyA, p); // kunci rahasia Alice
+        sharedSecretB = publicKeyA.modPow(privateKeyB, p); // kunci rahasia Bob
+    }
 
-    # Pemilihan kunci pribadi
-    x = 36  # Kunci pribadi Alice
-    y = 58  # Kunci pribadi Bob
+    public void displayKeys() {
+        System.out.println("Bilangan Prima (p): " + p);
+        System.out.println("Generator (g): " + g);
+        System.out.println("Kunci Pribadi Alice: " + privateKeyA);
+        System.out.println("Kunci Pribadi Bob: " + privateKeyB);
+        System.out.println("Kunci Publik Alice: " + publicKeyA);
+        System.out.println("Kunci Publik Bob: " + publicKeyB);
+        System.out.println("Kunci Rahasia Alice: " + sharedSecretA);
+        System.out.println("Kunci Rahasia Bob: " + sharedSecretB);
+    }
 
-    # Menghitung kunci publik
-    X = power_mod(g, x, p)  # Kunci publik Alice
-    Y = power_mod(g, y, p)  # Kunci publik Bob
-
-    print(f"Kunci Publik Alice (X): {X}")
-    print(f"Kunci Publik Bob (Y): {Y}")
-
-    # Menghitung kunci rahasia bersama
-    K_Alice = power_mod(Y, x, p)  # Kunci rahasia Alice
-    K_Bob = power_mod(X, y, p)     # Kunci rahasia Bob
-
-    print(f"Kunci Rahasia Bersama Alice (K): {K_Alice}")
-    print(f"Kunci Rahasia Bersama Bob (K): {K_Bob}")
-
-# Menjalankan fungsi
-if __name__ == "__main__":
-    diffie_hellman()
+    public static void main(String[] args) {
+        DiffieHellman dh = new DiffieHellman(512); // panjang bit 512
+        dh.displayKeys(); // menampilkan langkah-langkah
+    }
+}
